@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Converter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Image Converter</h1>
+
+  <div id="drop-area">
+    <p>Drag & drop images here or</p>
+    <button id="browse-button">Browse</button>
+    <input type="file" id="file-input" multiple accept="image/*" hidden />
+  </div>
+
+  <div id="controls">
+    <label for="format-select">Format:</label>
+    <select id="format-select">
+      <option value="jpeg">JPEG</option>
+      <option value="png">PNG</option>
+      <option value="webp">WebP</option>
+    </select>
+
+    <label for="quality-range">Quality:</label>
+    <input type="range" id="quality-range" min="10" max="100" value="90" />
+    <span id="quality-value">90</span>
+  </div>
+
+  <div id="file-count">Images selected: <span id="count">0</span></div>
+
+  <div id="preview-container"></div>
+
+  <progress id="global-progress" value="0" max="100"></progress>
+
+  <button id="convert-button">Convert & Download</button>
+
+  <!-- Include heic2any library -->
+  <script src="https://unpkg.com/heic2any/dist/heic2any.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
